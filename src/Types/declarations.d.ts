@@ -10,3 +10,5 @@ declare module '*.scss' {
     const content: Record<string, string>;
     export default content;
 }
+
+declare const BASE_URL_NAME: string | undefined;

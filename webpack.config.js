@@ -9,6 +9,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const webpack = require('webpack');
 
 const { Directory, Path } = require('./path.config.js');
 
@@ -74,6 +75,9 @@ module.exports = (env) => {
                 },
                 configFile: path.resolve('tsconfig.json'),
             },
+        }),
+        new webpack.DefinePlugin({
+            BASE_URL_NAME: JSON.stringify(env.BASE_URL_NAME),
         }),
     ];
 
