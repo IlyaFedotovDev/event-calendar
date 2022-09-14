@@ -1,5 +1,3 @@
 node_modules/
 build/
 stats/
-
-/package-lock.json
